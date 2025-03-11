@@ -7,23 +7,14 @@ fun main(){
             println("Зал с таким номером не существует")
         }
         else{
+            //println("Введите информацию о вашем сеансе (название кинофильма, время сеанса, стоимость билета, количество зрителей на данный момент")
+            //var sitting:Cinema=Cinema(readln(), readln(), readLine()!!.toDouble(), readln(), readLine()!!.toInt())
             val hall = when(hallNumber){
                 1 -> "Премиум зал"
                 2 -> "3D зал"
                 else -> "Обычный зал"
             }
-            println("Название кинофильма:")
-            val movieTitle = readLine()!!.toString()
-            println("Время сеанса:")
-            val showTime = readLine()!!.toString()
-            println("Стоимость билета:")
-            val ticketPrice = readLine()!!.toDouble()
-            println("Количество зрителей на данный момент:")
-            val audienceCount = readLine()!!.toInt()
-            if(ticketPrice <= 0 || audienceCount <= 0){
-                println("Ошибка")
-                return
-            }
+            //premierzal.hall= readln()
             if(hall == "Премиум зал"){
                 println("В вашем билете есть доступ в зал ожидания? \n 1 - Да \n 2 - Нет")
                 val lounge = readLine()!!.toInt()
@@ -32,7 +23,8 @@ fun main(){
                     2 -> false
                     else -> return
                 }
-                val cinema = PremiumCinema(movieTitle, showTime, ticketPrice, hall, audienceCount, loungeAccess)
+                println("Введите информацию о вашем сеансе (название кинофильма, время сеанса, стоимость билета, количество зрителей на данный момент")
+                val cinema:PremiumCinema = PremiumCinema(readln(), readln(), readLine()!!.toDouble(), hall, readLine()!!.toInt(), loungeAccess)
                 println("Сколько билетов вы хотите купить?")
                 val ticket = readLine()!!.toInt()
                 if(ticket>0)
@@ -43,6 +35,7 @@ fun main(){
                 }
                 cinema.Info()
                 cinema.Lounge()
+                cinema.Cost()
                 cinema.Food()
                 cinema.VipSeating()
                 cinema.EnjoyWatching()
@@ -55,7 +48,8 @@ fun main(){
                     2 -> false
                     else -> return
                 }
-                val cinema = ThreeDCinema(movieTitle, showTime, ticketPrice, hall, audienceCount, glassesIncluded)
+                println("Введите информацию о вашем сеансе (название кинофильма, время сеанса, стоимость билета, количество зрителей на данный момент, формат фильма (сколько D)")
+                val cinema:ThreeDCinema = ThreeDCinema(readln(), readln(), readLine()!!.toDouble(), hall, readLine()!!.toInt(), glassesIncluded, readLine()!!.toInt())
                 println("Сколько билетов вы хотите купить?")
                 val ticket = readLine()!!.toInt()
                 if(ticket>0)
@@ -66,12 +60,13 @@ fun main(){
                 }
                 cinema.Info()
                 cinema.Glasses()
+                cinema.Cost()
                 cinema.SpecialEffect()
                 cinema.PremiumExperience()
                 cinema.EnjoyWatching()
             }
             else{
-                val cinema = Cinema(movieTitle, showTime, ticketPrice, hall, audienceCount)
+                val cinema:Cinema = Cinema(readln(), readln(), readLine()!!.toDouble(), hall, readLine()!!.toInt())
                 println("Сколько билетов вы хотите купить?")
                 val ticket = readLine()!!.toInt()
                 if(ticket>0)

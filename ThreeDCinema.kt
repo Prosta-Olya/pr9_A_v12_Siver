@@ -4,7 +4,8 @@ class ThreeDCinema (
     ticketPrice: Double,
     hall: String,
     audienceCount: Int,
-    val glassesIncluded: Boolean // дополнительное поле для 3D кинотеатра - включены ли очки
+    val glassesIncluded: Boolean, // дополнительное поле для 3D кинотеатра - включены ли очки
+    val format: Int // дополнительное поле для 3D кинотеатра - формат сколько D
 ) : Cinema(movieTitle, showTime, ticketPrice, hall, audienceCount){
     fun Glasses() {
         if (glassesIncluded) {
@@ -12,6 +13,18 @@ class ThreeDCinema (
         } else {
             println("Очки для просмотра фильма в 3D формате не включены в стоимость билета")
         }
+    }
+    fun Cost(){
+        if(format>5){
+            ticketPrice+300
+        }
+        else if(format>10){
+            ticketPrice+500
+        }
+        if(glassesIncluded){
+            ticketPrice+200
+        }
+        println("Итоговая стоимость: $ticketPrice")
     }
     fun SpecialEffect() {
         println("На сеансе '$movieTitle' будут использованы специальные эффекты!")

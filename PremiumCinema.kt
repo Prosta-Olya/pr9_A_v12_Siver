@@ -16,7 +16,12 @@ class PremiumCinema(
             println("Зрители не имеют доступа в зал ожидания")
         }
     }
-
+    fun Cost(){
+        if(loungeAccess){
+            ticketPrice+200
+        }
+        println("Итоговая стоимость: $ticketPrice")
+    }
     fun Food() {
         println("В нашем премиум кинотеатре предлагаются эксклюзивные закуски и напитки!")
     }
