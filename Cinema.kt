@@ -1,7 +1,7 @@
 open class Cinema (
     val movieTitle: String, // название кинофильма
     val showTime: String, // сеанс (время)
-    val ticketPrice: Double, // стоимость билета
+    var ticketPrice: Double, // стоимость билета
     val hall: String, // зал
     var audienceCount: Int // количество зрителей
 ){
@@ -9,7 +9,10 @@ open class Cinema (
         audienceCount++
         println("Билет на '$movieTitle' куплен. Количество зрителей: $audienceCount.")
     }
-
+    fun TotalCost(ticket: Int){
+        ticketPrice = ticketPrice*ticket
+        println("Итоговая цена за билеты ($ticket шт) = $ticketPrice")
+    }
     fun Info() {
         println("Фильм: $movieTitle, Сеанс: $showTime, Стоимость билета: $ticketPrice руб., Зал: $hall, Зрителей: $audienceCount")
     }

@@ -36,6 +36,7 @@ fun main(){
                 cinema.Info()
                 cinema.Lounge()
                 cinema.Cost()
+                cinema.TotalCost(ticket)
                 cinema.Food()
                 cinema.VipSeating()
                 cinema.EnjoyWatching()
@@ -61,6 +62,7 @@ fun main(){
                 cinema.Info()
                 cinema.Glasses()
                 cinema.Cost()
+                cinema.TotalCost(ticket)
                 cinema.SpecialEffect()
                 cinema.PremiumExperience()
                 cinema.EnjoyWatching()
@@ -76,6 +78,7 @@ fun main(){
                     }
                 }
                 cinema.Info()
+                cinema.TotalCost(ticket)
                 cinema.EnjoyWatching()
             }
         }

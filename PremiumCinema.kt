@@ -18,7 +18,7 @@ class PremiumCinema(
     }
     fun Cost(){
         if(loungeAccess){
-            ticketPrice+200
+            ticketPrice = ticketPrice+200
         }
         println("Итоговая стоимость: $ticketPrice")
     }

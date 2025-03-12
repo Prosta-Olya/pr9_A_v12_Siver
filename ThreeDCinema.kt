@@ -16,13 +16,13 @@ class ThreeDCinema (
     }
     fun Cost(){
         if(format>5){
-            ticketPrice+300
+            ticketPrice = ticketPrice+300
         }
         else if(format>10){
-            ticketPrice+500
+            ticketPrice = ticketPrice+500
         }
         if(glassesIncluded){
-            ticketPrice+200
+            ticketPrice = ticketPrice+200
         }
         println("Итоговая стоимость: $ticketPrice")
     }
